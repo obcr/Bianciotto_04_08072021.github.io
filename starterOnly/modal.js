@@ -20,6 +20,8 @@ const emailMessage = document.getElementById("emailMessage");
 const birthMessage = document.getElementById("birthMessage");
 const quantityMessage = document.getElementById("quantityMessage");
 const modalBody = document.querySelector(".modal-body");
+const forward = document.getElementById("forward");
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -34,13 +36,12 @@ function launchModal() {
 // formulaire display no
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Yes !");
 });
 
 
 // Valid form
 function validate() {
-  // console.log('test');
+  console.log('test');
   let firstValid = checkFirst();
   let lastValid = checkLast();
   let emailValid = checkEmail();
@@ -49,26 +50,28 @@ function validate() {
   let locationValid = checklocation();
   let checkbox1Valid = checkcheckbox1();
 
-  if (firstValid
-    && lastValid
-    && emailValid
-    && birthdateValid
-    && quantityValid
-    && locationValid
-    && checkbox1Valid) {
+  if (firstValid && lastValid && emailValid && birthdateValid && quantityValid && locationValid && checkbox1Valid) {
+    const data = {
+      firstValid: firstValid,
+      lastValid: lastValid,
+      emailValid: emailValid,
+      birthdateValid: birthdateValid,
+      quantityValid: quantityValid,
+      locationValid: locationValid,
+    };
+    console.log(data);
     modalBody.innerHTML = "Merci ! Votre réservation a été reçue.";
     modalBody.style.height = "150px";
     modalBody.style.paddingTop = "50px";
     modalBody.style.paddingLeft = "100px";
     modalBody.style.paddingRight = "100px";
     modalBody.style.textAlign = "center";
+    forward.style.display = "block";
+    forward.style.marginBottom = "60px";
+    forward.addEventListener("click", closeForward);
     console.log("okValid");
     return true;
-  }
-  else {
-    console.log("noValid");
-    return false;
-  }
+}
 }
 
 function checkFirst() {
@@ -177,3 +180,9 @@ function checkcheckbox1() {
 closeModal.addEventListener("click", () => {
   modalbg.style.display = "none";
 });
+
+
+// Close Window Forward
+function closeForward() {
+  modalbg.style.display = "none";
+}
