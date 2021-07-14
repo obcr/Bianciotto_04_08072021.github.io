@@ -169,7 +169,20 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content {
+.bgclosed {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+
+.content,
+.content-end  {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -183,7 +196,8 @@ main {
   padding-top: 10px;
 }
 
-.modal-body {
+.modal-body,
+.modal-end {
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -296,7 +310,8 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
+.close,
+.close-end {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -307,7 +322,9 @@ input[data-error]::after {
   transform: scale(0.7);
 }
 .close:before,
-.close:after {
+.close-end:before,
+.close:after,
+.close-end:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -315,10 +332,12 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
-.close:before {
+.close:before, 
+.close-end:before {
   transform: rotate(45deg);
 }
-.close:after {
+.close:after,
+.close-end:after {
   transform: rotate(-45deg);
 }
 .btn-submit,

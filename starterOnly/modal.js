@@ -10,9 +10,11 @@ function editNav() {
 // DOM Elements
 const form = document.querySelector("form");
 const modalbg = document.querySelector(".bground");
+const bgclosed = document.querySelector(".bgclosed");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModal = document.querySelector(".close");
+const closeEnd = document.querySelector(".close-end");
 const btnSubmit = document.querySelectorAll(".btn-submit");
 const firstMessage = document.getElementById("firstMessage");
 const lastMessage = document.getElementById("lastMessage");
@@ -20,6 +22,7 @@ const emailMessage = document.getElementById("emailMessage");
 const birthMessage = document.getElementById("birthMessage");
 const quantityMessage = document.getElementById("quantityMessage");
 const modalBody = document.querySelector(".modal-body");
+const modalEnd = document.querySelector(".modal-end");
 const forward = document.getElementById("forward");
 
 
@@ -60,12 +63,14 @@ function validate() {
       locationValid: locationValid,
     };
     console.log(data);
-    modalBody.innerHTML = "Merci ! Votre réservation a été reçue.";
-    modalBody.style.height = "150px";
-    modalBody.style.paddingTop = "50px";
-    modalBody.style.paddingLeft = "100px";
-    modalBody.style.paddingRight = "100px";
-    modalBody.style.textAlign = "center";
+    modalBody.style.display = "none";
+    bgclosed.style.display = "block";
+    modalEnd.innerHTML = "Merci ! Votre réservation a été reçue.";
+    modalEnd.style.height = "150px";
+    modalEnd.style.paddingTop = "50px";
+    modalEnd.style.paddingLeft = "100px";
+    modalEnd.style.paddingRight = "100px";
+    modalEnd.style.textAlign = "center";
     forward.style.display = "block";
     forward.style.marginBottom = "60px";
     forward.addEventListener("click", closeForward);
@@ -73,6 +78,8 @@ function validate() {
     return true;
 }
 }
+
+// Function for Check
 
 function checkFirst() {
   const first = document.getElementById("first");
@@ -181,8 +188,16 @@ closeModal.addEventListener("click", () => {
   modalbg.style.display = "none";
 });
 
-
-// Close Window Forward
-function closeForward() {
+// closeEnd form
+closeEnd.addEventListener("click", () => {
+  bgclosed.style.display = "none";
   modalbg.style.display = "none";
+});
+
+// Close Window & Forward
+function closeForward() {
+  modalBody.style.display = "block";
+  bgclosed.style.display = "none";
+  form.submit();
 }
+
