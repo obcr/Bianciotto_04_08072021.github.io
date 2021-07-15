@@ -178,6 +178,7 @@ function validate() {
     forward.style.display = "block";
     forward.style.marginBottom = "60px";
     forward.addEventListener("click", closeForward);
+    closeEnd.addEventListener("click", crossClose);
     console.log("okValid");
     return true;
 }
@@ -191,10 +192,19 @@ closeModal.addEventListener("click", () => {
 // closeEnd form
 closeEnd.addEventListener("click", () => {
   bgclosed.style.display = "none";
+  modalBody.style.display = "block";
+  form.submit();
   // modalbg.style.display = "none";
 });
 
-// Close Window & Forward
+// CloseCross Window & Forward
+function crossClose() {
+  modalBody.style.display = "block";
+  bgclosed.style.display = "none";
+  form.submit();
+}
+
+// CloseButton Window & Forward
 function closeForward() {
   modalBody.style.display = "block";
   bgclosed.style.display = "none";
