@@ -41,44 +41,6 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-
-// Valid form
-function validate() {
-  console.log('test');
-  let firstValid = checkFirst();
-  let lastValid = checkLast();
-  let emailValid = checkEmail();
-  let birthdateValid = checkbirthdate();
-  let quantityValid = checkquantity();
-  let locationValid = checklocation();
-  let checkbox1Valid = checkcheckbox1();
-
-  if (firstValid && lastValid && emailValid && birthdateValid && quantityValid && locationValid && checkbox1Valid) {
-    const data = {
-      firstValid: firstValid,
-      lastValid: lastValid,
-      emailValid: emailValid,
-      birthdateValid: birthdateValid,
-      quantityValid: quantityValid,
-      locationValid: locationValid,
-    };
-    console.log(data);
-    modalBody.style.display = "none";
-    bgclosed.style.display = "block";
-    modalEnd.innerHTML = "Merci ! Votre réservation a été reçue.";
-    modalEnd.style.height = "150px";
-    modalEnd.style.paddingTop = "50px";
-    modalEnd.style.paddingLeft = "100px";
-    modalEnd.style.paddingRight = "100px";
-    modalEnd.style.textAlign = "center";
-    forward.style.display = "block";
-    forward.style.marginBottom = "60px";
-    forward.addEventListener("click", closeForward);
-    console.log("okValid");
-    return true;
-}
-}
-
 // Function for Check
 
 function checkFirst() {
@@ -183,6 +145,44 @@ function checkcheckbox1() {
   }
 }
 
+// Valid form
+function validate() {
+  console.log('test');
+  let firstValid = checkFirst();
+  let lastValid = checkLast();
+  let emailValid = checkEmail();
+  let birthdateValid = checkbirthdate();
+  let quantityValid = checkquantity();
+  let locationValid = checklocation();
+  let checkbox1Valid = checkcheckbox1();
+
+  if (firstValid && lastValid && emailValid && birthdateValid && quantityValid && locationValid && checkbox1Valid) {
+    const data = {
+      firstValid: firstValid,
+      lastValid: lastValid,
+      emailValid: emailValid,
+      birthdateValid: birthdateValid,
+      quantityValid: quantityValid,
+      locationValid: locationValid,
+    };
+    console.log(data);
+    modalbg.style.display = "none";
+    modalBody.style.display = "none";
+    bgclosed.style.display = "block";
+    modalEnd.innerHTML = "Merci ! Votre réservation a été reçue.";
+    modalEnd.style.height = "150px";
+    modalEnd.style.paddingTop = "50px";
+    modalEnd.style.paddingLeft = "100px";
+    modalEnd.style.paddingRight = "100px";
+    modalEnd.style.textAlign = "center";
+    forward.style.display = "block";
+    forward.style.marginBottom = "60px";
+    forward.addEventListener("click", closeForward);
+    console.log("okValid");
+    return true;
+}
+}
+
 // close modal form
 closeModal.addEventListener("click", () => {
   modalbg.style.display = "none";
@@ -191,7 +191,7 @@ closeModal.addEventListener("click", () => {
 // closeEnd form
 closeEnd.addEventListener("click", () => {
   bgclosed.style.display = "none";
-  modalbg.style.display = "none";
+  // modalbg.style.display = "none";
 });
 
 // Close Window & Forward

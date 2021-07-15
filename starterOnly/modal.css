@@ -181,10 +181,24 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content,
+.content {
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 10px;
+}
+
 .content-end  {
   margin: 5% auto;
   width: 100%;
+  margin-top: 250px;
   max-width: 500px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
