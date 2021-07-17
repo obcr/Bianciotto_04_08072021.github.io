@@ -16,11 +16,6 @@ const formData = document.querySelectorAll(".formData");
 const closeModal = document.querySelector(".close");
 const closeEnd = document.querySelector(".close-end");
 const btnSubmit = document.querySelectorAll(".btn-submit");
-const firstMessage = document.getElementById("firstMessage");
-const lastMessage = document.getElementById("lastMessage");
-const emailMessage = document.getElementById("emailMessage");
-const birthMessage = document.getElementById("birthMessage");
-const quantityMessage = document.getElementById("quantityMessage");
 const modalBody = document.querySelector(".modal-body");
 const modalEnd = document.querySelector(".modal-end");
 const forward = document.getElementById("forward");
@@ -194,7 +189,6 @@ closeEnd.addEventListener("click", () => {
   bgclosed.style.display = "none";
   modalBody.style.display = "block";
   form.submit();
-  // modalbg.style.display = "none";
 });
 
 // CloseCross Window & Forward
