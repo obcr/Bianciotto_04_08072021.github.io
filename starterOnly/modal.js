@@ -164,7 +164,7 @@ function validate() {
     modalbg.style.display = "none";
     modalBody.style.display = "none";
     bgclosed.style.display = "block";
-    modalEnd.innerHTML = "Merci ! Votre réservation a été reçue.";
+    modalEnd.innerHTML = "Merci d'avoir soumis vos informations d'inscription.";
     modalEnd.style.height = "150px";
     modalEnd.style.paddingTop = "50px";
     modalEnd.style.paddingLeft = "100px";

@@ -73,6 +73,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+    color: #ff0000;
   }
 }
 
@@ -97,7 +98,6 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
 } 
 
@@ -359,7 +359,8 @@ input[data-error]::after {
 .btn-forward {
   background: #fe142f;
   display: block;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 7px;
   font-size: 1rem;
   padding: 12px 82px;
@@ -536,7 +537,7 @@ footer {
     white-space: normal;
   }
   .hero-text {
-    width: unset;
+    width: 100%;
     font-size: 1.5rem;
   }
   .hero-img img {
@@ -553,6 +554,47 @@ footer {
     text-align: center;
   }
 }
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .btn-forward {
+    background: #fe142f;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 65px;
+    border-radius: 7px;
+    font-size: 1rem;
+    padding: 12px 82px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+  }
+.hero-text {
+    width: 80%;
+    font-size: 1.3rem;
+}
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .btn-forward {
+    background: #fe142f;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 65px;
+    border-radius: 7px;
+    font-size: 1rem;
+    padding: 12px 82px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+  }
+  .hero-text {
+      width: 90%;
+      font-size: 1.3rem;
+  }
+  }
+
 
 @keyframes modalopen {
   from {
