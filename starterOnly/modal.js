@@ -40,7 +40,7 @@ form.addEventListener("submit", (e) => {
 
 function checkFirst() {
   const first = document.getElementById("first");
-  if (first.value.length > 2) {
+  if (first.value.length >= 2) {
     first.closest(".formData").setAttribute("data-error-visible", false);
     console.log("firsttrue");
     return true;
@@ -54,7 +54,7 @@ function checkFirst() {
 
 function checkLast() {
   const last = document.getElementById("last");
-  if (last.value.length > 2) {
+  if (last.value.length >= 2) {
     last.closest(".formData").setAttribute("data-error-visible", false);
     console.log("lasttrue");
     return true;
@@ -165,8 +165,8 @@ function validate() {
     modalBody.style.display = "none";
     bgclosed.style.display = "block";
     modalEnd.innerHTML = "Merci d'avoir soumis vos informations d'inscription.";
-    modalEnd.style.height = "150px";
-    modalEnd.style.paddingTop = "50px";
+    modalEnd.style.height = "620px";
+    modalEnd.style.paddingTop = "300px";
     modalEnd.style.paddingLeft = "100px";
     modalEnd.style.paddingRight = "100px";
     modalEnd.style.textAlign = "center";
